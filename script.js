@@ -72,3 +72,36 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("call-number").textContent = callCount;
   });
 });
+// Script for "Enter" key navigation and copying functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const formElements = document.querySelectorAll(
+    "#callForm input, #callForm textarea"
+  );
+
+  // Move to the next field on Enter
+  formElements.forEach((element, index) => {
+    element.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const nextElement = formElements[index + 1];
+        if (nextElement) {
+          nextElement.focus();
+        }
+      }
+    });
+  });
+});
+
+// Function to copy text from an input field
+function copyText(elementId) {
+  const inputElement = document.getElementById(elementId);
+  inputElement.select();
+  inputElement.setSelectionRange(0, 99999); // For mobile devices
+  navigator.clipboard.writeText(inputElement.value);
+  // .then(() => {
+  //   alert("Copied to clipboard");
+  // })
+  // .catch(() => {
+  //   alert("Failed to copy");
+  // });
+}

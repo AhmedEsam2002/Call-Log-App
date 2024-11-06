@@ -7,63 +7,94 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1>Call <span id="call-number">1</span></h1>
-      </header>
-      <form id="callForm" class="call-form">
-        <label for="phone">Phone</label>
-        <input
-          type="text"
-          id="phone"
-          name="phone"
-          placeholder="Enter phone number"
-          required
-        />
+    <div class="main-container">
+      <!-- Form Section -->
+      <div class="form-container">
+        <header>
+          <h1>Call <span id="call-number">1</span></h1>
+        </header>
+        <form id="callForm" class="call-form">
+          <!-- Phone Field with Copy Button -->
+          <label for="phone">Phone</label>
+          <div class="input-group">
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              placeholder="Enter phone number"
+              required
+            />
+            <button type="button" class="copy-btn" onclick="copyText('phone')">
+              Copy
+            </button>
+          </div>
 
-        <label for="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Enter name"
-          required
-        />
+          <!-- Name Field with Copy Button -->
+          <label for="name">Name</label>
+          <div class="input-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter name"
+              required
+            />
+            <button type="button" class="copy-btn" onclick="copyText('name')">
+              Copy
+            </button>
+          </div>
 
-        <div class="type-section">
-          <label>Type:</label>
-          <label
-            ><input type="radio" name="type" value="Agent" required />
-            Agent</label
-          >
-          <label
-            ><input type="radio" name="type" value="P.Agent" /> P.Agent</label
-          >
-          <label
-            ><input type="radio" name="type" value="Customer" /> Customer</label
-          >
-        </div>
+          <!-- Type Section -->
+          <div class="type-section">
+            <label>Type:</label>
+            <label
+              ><input type="radio" name="type" value="Agent" required />
+              Agent</label
+            >
+            <label
+              ><input type="radio" name="type" value="P.Agent" /> P.Agent</label
+            >
+            <label
+              ><input type="radio" name="type" value="Customer" />
+              Customer</label
+            >
+          </div>
 
-        <label for="account">Account Number / Phone of Account</label>
-        <input
-          type="text"
-          id="account"
-          name="account"
-          placeholder="Enter account number"
-          required
-        />
+          <!-- Account Field with Copy Button -->
+          <label for="account">Account Number / Phone of Account</label>
+          <div class="input-group">
+            <input
+              type="text"
+              id="account"
+              name="account"
+              placeholder="Auto-filled with phone number"
+              required
+            />
+            <button
+              type="button"
+              class="copy-btn"
+              onclick="copyText('account')"
+            >
+              Copy
+            </button>
+          </div>
 
-        <label for="description">Description</label>
-        <textarea
-          id="description"
-          name="description"
-          placeholder="Enter call description"
-        ></textarea>
+          <!-- Description Field -->
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            name="description"
+            placeholder="Enter call description"
+          ></textarea>
 
-        <button type="button" id="nextCall">Next Call</button>
-      </form>
+          <button type="button" id="nextCall">Next Call</button>
+        </form>
+      </div>
 
-      <div id="logEntries" class="log-entries"></div>
+      <!-- Log Entries Section -->
+      <div class="log-entries-container">
+        <div id="logEntries" class="log-entries"></div>
+      </div>
     </div>
 
     <script src="script.js"></script>
