@@ -1,0 +1,146 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+/* Container Styling */
+.container {
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+/* Header Styling */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+header h1 span {
+  color: #6e8efb;
+}
+
+/* Form Styling */
+.call-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.call-form input[type="text"],
+.call-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.call-form input:focus,
+.call-form textarea:focus {
+  border-color: #6e8efb;
+  box-shadow: 0 0 5px rgba(110, 142, 251, 0.5);
+}
+
+.type-section {
+  margin-bottom: 15px;
+}
+
+.type-section label {
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+button#nextCall {
+  width: 100%;
+  padding: 12px;
+  background: #6e8efb;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button#nextCall:hover {
+  background: #5b78d3;
+}
+
+/* Log Entries Styling */
+.log-entries {
+  margin-top: 20px;
+}
+
+.log-entry {
+  margin-bottom: 15px;
+  background: #eef2ff;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.log-entry-header {
+  padding: 12px;
+  background: #6e8efb;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.log-entry-header:hover {
+  background: #5b78d3;
+}
+
+.log-entry-details {
+  padding: 15px;
+  display: none;
+  color: #333;
+  animation: slideDown 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
