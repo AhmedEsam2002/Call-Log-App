@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Call Log App</title>
+    <title>Enhanced Call Log App</title>
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -14,37 +15,30 @@
           <h1>Call <span id="call-number">1</span></h1>
         </header>
         <form id="callForm" class="call-form">
-          <!-- Phone Field with Copy Button -->
           <label for="phone">Phone</label>
           <div class="input-group">
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              placeholder="Enter phone number"
-              required
-            />
-            <button type="button" class="copy-btn" onclick="copyText('phone')">
+            <input type="tel" id="phone" name="phone" required />
+            <button
+              type="button"
+              class="btn copy-btn"
+              onclick="copyText('phone')"
+            >
               Copy
             </button>
           </div>
 
-          <!-- Name Field with Copy Button -->
           <label for="name">Name</label>
           <div class="input-group">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter name"
-              required
-            />
-            <button type="button" class="copy-btn" onclick="copyText('name')">
+            <input type="text" id="name" name="name" required />
+            <button
+              type="button"
+              class="btn copy-btn"
+              onclick="copyText('name')"
+            >
               Copy
             </button>
           </div>
 
-          <!-- Type Section -->
           <div class="type-section">
             <label>Type:</label>
             <label
@@ -60,42 +54,54 @@
             >
           </div>
 
-          <!-- Account Field with Copy Button -->
           <label for="account">Account Number / Phone of Account</label>
           <div class="input-group">
-            <input
-              type="text"
-              id="account"
-              name="account"
-              placeholder="Auto-filled with phone number"
-              required
-            />
+            <input type="text" id="account" name="account" required />
             <button
               type="button"
-              class="copy-btn"
+              class="btn copy-btn"
               onclick="copyText('account')"
             >
               Copy
             </button>
           </div>
 
-          <!-- Description Field -->
           <label for="description">Description</label>
-          <textarea
-            id="description"
-            name="description"
-            placeholder="Enter call description"
-          ></textarea>
+          <textarea id="description" name="description" required></textarea>
 
           <button type="button" id="nextCall">Next Call</button>
         </form>
       </div>
+      <!-- Notes -->
+      <!-- Important Notes Section -->
 
-      <!-- Log Entries Section -->
-      <div class="log-entries-container">
+      <!-- Log Section -->
+      <div class="log-container">
+        <div class="search-container">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Search calls..." />
+        </div>
         <div id="logEntries" class="log-entries"></div>
       </div>
     </div>
+    <!-- Notes -->
+    <div class="notes-container">
+      <header>
+        <h2>Important Notes</h2>
+      </header>
+      <form id="noteForm" class="note-form">
+        <label for="noteContent">Add a Note</label>
+        <div class="input-group">
+          <textarea id="noteContent" name="noteContent" required></textarea>
+          <button type="button" class="btn copy-btn" onclick="copyNote()">
+            Copy
+          </button>
+        </div>
+        <button type="button" id="addNote">Add Note</button>
+      </form>
+      <div id="notesLog" class="notes-log"></div>
+    </div>
+    <div id="toast" class="toast"></div>
 
     <script src="script.js"></script>
   </body>
